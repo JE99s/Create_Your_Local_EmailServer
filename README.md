@@ -20,42 +20,42 @@ On my Google Chrome browser, I'll navigate to the hMailServer Download [embed li
 <br />
 Once the installer is downloaded, double-click it from wherever you downloaded it to start the setup process.
 <br/>
-<img src="https://i.imgur.com/x1U9zOk.png" height="80%" width="80%" alt="hMailServerSetup Select Destination Location"/>
+<img src="https://i.imgur.com/x1U9zOk.png" height="65%" width="65%" alt="hMailServerSetup Select Destination Location"/>
 <br />
 Once we launch the setup it asks us to select the components we want to install. I am selecting all including Server and Administrative tools. Next, for selecting database server type, we'll be using the default one and using the built-in database engine (Microsoft SQL Compact). Make sure to select this option to ensure that there is a full installation, and the built-in database will be utilized.
 <br/>
-<img src="https://i.imgur.com/DqFWc1w.png" height="80%" width="80%" alt="Select Components"/>
+<img src="https://i.imgur.com/DqFWc1w.png" height="70%" width="70%" alt="Select Components"/>
 <br />
-<img src="https://i.imgur.com/n4yrjnw.png" height="80%" width="80%" alt="Select database server type"/>
+<img src="https://i.imgur.com/n4yrjnw.png" height="70%" width="70%" alt="Select database server type"/>
 <br />
 Next, you'll be taken to the hMailServer security window to establish an administrative login password. This is the main password that we'll <b>NEED</b> to remember. Go ahead and click install once you're ready!
 <br/>
-<img src="https://i.imgur.com/T9JIeMy.png" height="80%" width="80%" alt="hMailServer Security"/>
+<img src="https://i.imgur.com/T9JIeMy.png" height="70%" width="70%" alt="hMailServer Security"/>
 <br />
-<img src="https://i.imgur.com/MeQzPSe.png" height="80%" width="80%" alt="Ready to Install"/>
+<img src="https://i.imgur.com/MeQzPSe.png" height="65%" width="65%" alt="Ready to Install"/>
 <br />
 ⚠️<b>Hold up!!! You might come across this error during installation.</b>⚠️
 <br/>
-<img src="https://i.imgur.com/RkNAvyo.png" height="80%" width="80%" alt="The Following applications..."/>
+<img src="https://i.imgur.com/RkNAvyo.png" height="55%" width="55%" alt="The Following applications..."/>
 <br />
-<img src="https://i.imgur.com/gxqpi45.png" height="80%" width="80%" alt="Error opening"/>
+<img src="https://i.imgur.com/gxqpi45.png" height="55%" width="55%" alt="Error opening"/>
 <br />
 To fix this error, go to your Windows search bar and type in <b>Turn Windows features on or off</b> to open this section of the control panel. Select that search result.
-<img src="https://i.imgur.com/mWRcXHK.png" height="80%" width="80%" alt="Turn Windows features..."/>
+<img src="https://i.imgur.com/mWRcXHK.png" height="45%" width="45%" alt="Turn Windows features..."/>
 <br />
 Make sure that the checkbox next to <b>.NET Framework 3.5</b> is filled in and click <b>OK</b>.
 <br />
-<img src="https://i.imgur.com/5o9XZMm.png" height="80%" width="80%" alt="Click OK"/>
+<img src="https://i.imgur.com/5o9XZMm.png" height="65%" width="65%" alt="Click OK"/>
 <br />
 Then, select the <b>Let Windows Updates Download the File for You</b> option.
 <br />
-<img src="https://i.imgur.com/iTQ1mex.png" height="80%" width="80%" alt="Downloading required files"/>
+<img src="https://i.imgur.com/iTQ1mex.png" height="70%" width="70%" alt="Downloading required files"/>
 <br />
-<img src="https://i.imgur.com/r0Na0JN.png" height="80%" width="80%" alt="Applying changes"/>
+<img src="https://i.imgur.com/r0Na0JN.png" height="70%" width="70%" alt="Applying changes"/>
 <br />
 Now, we'll retry the process to install hMailServer.
 <br />
-<img src="https://i.imgur.com/L8yt2zb.png" height="80%" width="80%" alt="hMailServer Setup Wizard"/>
+<img src="https://i.imgur.com/L8yt2zb.png" height="65%" width="65%" alt="hMailServer Setup Wizard"/>
 <br />
 Now, when we start up hMailServer, a Connect window will show up to enable us to configure our email server. Click the <b>Administrator</b> option and sign in with the password we created earlier.
 <br />
