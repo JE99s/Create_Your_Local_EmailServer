@@ -14,117 +14,97 @@
 <p>This demonstration will go through the installation and configurations of a lightweight email server. Once the hMail Email Server is initialized, we'll utilize the Thunderbird email application to test the newly created email server.</p>
 <br />
 <h3>Install hMailServer on Windwos 10 VM</h3>
-On my Google Chrome browser, I'll navigate to the hMailServer Download page
+On my Google Chrome browser, I'll navigate to the hMailServer Download [embed link to 'Download'] page. It is a 4MB setup file easy to configure. Fortnunately, there are not many prerequisites required to install this setup.
 <br/>
-<img src="https://i.imgur.com/BPp9Yg7.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/ZlNDSuG.png" height="80%" width="80%" alt="hMail Server Download page"/>
 <br />
-Still at the command prompt, I execute <i>md5sum Example.txt</i> to create an MD5sum hash string for the Example.txt file. This tool return a string of hexadecimal numbers that will be unique to my file on this virtual session.
+Once the installer is downloaded, double-click it from wherever you downloaded it to start the setup process.
 <br/>
-<img src="https://i.imgur.com/xaZZdKe.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/x1U9zOk.png" height="80%" width="80%" alt="hMailServerSetup Select Destination Location"/>
 <br />
-At the command prompt, I execute <i>md5sum Example.txt > Example.txt.md5</i> to store the MD5sum hash string for the Example.txt file in a new file. I continue and execute <i>ls</i> to list the files in the student folder and verify that the new Example.txt.md5 file has been added to the Documents folder.
-At the command prompt, I execute <i>cat Example.txt.md5</i> to view the contents of the file. It is the same MD5sum hash string I created earlier, as shown below.
+Once we launch the setup it asks us to select the components we want to install. I am selecting all including Server and Administrative tools. Next, for selecting database server type, we'll be using the default one and using the built-in database engine (Microsoft SQL Compact). Make sure to select this option to ensure that there is a full installation, and the built-in database will be utilized.
 <br/>
-<img src="https://i.imgur.com/fNXwx4X.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/DqFWc1w.png" height="80%" width="80%" alt="Select Components"/>
 <br />
-Back at the command prompt, I execute <i>md5sum -c Example.txt.md5</i> to check the MD5sum hash created for the Example.txt file. If the file has not been modified, the system will display the words "Example.txt: OK (shown above), indicating that the hash is the same for both. Now, at the command prompt I execute <i>sha1sum Example.txt</i> to create a SHA1sum hash string for the Example.txt file. The tool will return a sting of hexadecimal numbers that will be unique to that file only.
-<br/>
-<img src="https://i.imgur.com/EttNMpk.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/n4yrjnw.png" height="80%" width="80%" alt="Select database server type"/>
 <br />
-Returning to the command prompt, I execute <i>sha1sum Example.txt > Example.txt.sha1</i> to store the SHA1sum hash string for the Example.txt file in a new sha1 file. I want to verify that the new Example.txt.sha1 file has been added to the Documents folder. I execute <i>ls</i> to list the files in the student folder. Next, I execute <i>cat Example.txt.sha1</i> to view the contents of the Example.txt.sha1 file and I see the same string hexadecimal characters created earlier.
+Next, you'll be taken to the hMailServer security window to establish an administrative login password. This is the main password that we'll <b>NEED</b> to remember. Go ahead and click install once you're ready!
 <br/>
-<img src="https://i.imgur.com/twwM8aT.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/T9JIeMy.png" height="80%" width="80%" alt="hMailServer Security"/>
 <br />
-Next, I execute <i>sha1sum Example.txt.sha1</i> to check the SHA1sum created for the Example.txt file. If the file has not been modified, the system will display "Example.txt: OK", indicating that the SHA1sum hash is the same for both.
-<br/>
-<h3>Modify a File and Verify Hash Values</h3>
-At the command prompt, I execute <i>echo Jacob >> Example.txt</i> to add my name at the end of the Example.txt file, modifying its contents. Next, I execute <i>cat Example.txt</i> to view the contents of the modified .txt file. Back at the command prompt, I execute <i>md5sum Example.txt</i> to create an MD5sum hash string for that modified Example.txt file. The command will return a string of hexidecimal numbers that does not match the original string created from the orginal Example.txt file.
-<br/>
-<img src="https://i.imgur.com/x7wgYte.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/MeQzPSe.png" height="80%" width="80%" alt="Ready to Install"/>
 <br />
-At the command prompt, I execute <i>sha1sum Example.txt</i> to create a SHA1sum hash string for the modified Example.txt file, returning a new hash string of hexidecimal numbers, different than the orginal string from the original Example.txt file.
+⚠️<b>Hold up!!! You might come across this error during installation.</b>⚠️
 <br/>
-<img src="https://i.imgur.com/54bFjie.png" height="80%" width="80%" alt="Linux command line steps"/>
-<h3>Generate GnuPG Keys</h3>
-I'm still logged in as the student user. At the command prompt, I execute <i>gpgp --gen-key</i> to initiate the process for generating a public encryption key. When I'm prompted by the key generator I type the following answers for each response to the onscreen questions, pressing <b>Enter</b> after each entry:
-
-- I choose <b>1</b> for my key type selection
-- I enter <b>1024</b> for a key size of 1024 bits
-- When asked "Key is valid for?", I enter <b>0</b> so that the key does not expire  at all.
-- To confirm my choices, I enter <b>y</b> (for yes) saying it's correct.
-<br/>
-<img src="https://i.imgur.com/caiUdOY.png" height="60%" width="60%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/RkNAvyo.png" height="80%" width="80%" alt="The Following applications..."/>
 <br />
-Further into the key generator, I type the following answers in response to the request for a user ID to identify my key, pressing <b>Enter</b> after each entry.
-
-- Real name: <b>Student</b>
-- Email address: <b>student@securelabsondemand.com</b>
-- Comment: <b>press Enter</b>
-- Change (N)ame, (C)omment, (E)mail or (O)kay//(Q)uit?: <b>o</b>
-- Passphrase: <b>today is a nice day</b>
-- Repeat Passphrase: <b>today is a nice day</b>
-
-Then the system should display an error message: <i>Not enough random bytes available.</i> So, I open a second terminal window and resize both windows to fit on the desktop. At the command prompt, I execute <i>./entropy_loop.sh</i> to run a script that will "keep the machine busy" while generating a key pair.
-<br/>
-<img src="https://i.imgur.com/5hbe79p.png" height="80%" width="80%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/gxqpi45.png" height="80%" width="80%" alt="Error opening"/>
 <br />
-While that script is running in the background, I click the first terminal window to activate it. Within three to five minutes there should be a reappearance of the command prompt, indicating that sufficient bytes were available to create the GPG key. After confirming the command prompt returns to the first terminal window, I close the second terminal window. Back at the command prompt (on the 1st terminal window) I execute <i>gpg --export -a > student.pub</i> to save the GnuPG key to a new file called student.pub. At the command prompt, I execute <i>pwd</i> to determine which working directory (wd) I'm currently using. It should display /home/student/Documents, indicating that I'm in the user, student's, Documents folder.
-<br/>
-<img src="https://i.imgur.com/L2P4D6Y.png" height="60%" width="60%" alt="Linux command line steps"/>
+To fix this error, go to your Windows search bar and type in <b>Turn Windows features on or off</b> to open this section of the control panel. Select that search result.
+<img src="https://i.imgur.com/mWRcXHK.png" height="80%" width="80%" alt="Turn Windows features..."/>
 <br />
-Next, I execute <i>ls</i> to list the files in the Documents folder and verify that the student.pub file was saved to the correct user account and location.
-<br/>
-<img src="https://i.imgur.com/YgoU7US.png" height="60%" width="60%" alt="Linux command line steps"/>
+Make sure that the checkbox next to <b>.NET Framework 3.5</b> is filled in and click <b>OK</b>.
 <br />
-Now, I want to generate a GnuPG key for the Instructor account. Back at the command prompt, I execute <i>su Instructor</i> to switch to the Instructor account. When I'm prompted for the password, I enter "instructor". At the command prompt, I execute <i>cd /home/Instructor</i> to change directories to the Instructor folder.
-<br/>
-<img src="https://i.imgur.com/G196clf.png" height="60%" width="60%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/5o9XZMm.png" height="80%" width="80%" alt="Click OK"/>
 <br />
-I'm essentially performing the same process for generating a key for the Student account and proceed to create the GnuPG keys for the Instructor account with the following identification:
-
-- Real name: <b>Instructor</b>
-- Email address: <b>instructor@securelabsondemand.com</b>
-<br/>
-<img src="https://i.imgur.com/0ulhPZj.png" height="80%" width="80%" alt="Linux command line steps"/>
+Then, select the <b>Let Windows Updates Download the File for You</b> option.
 <br />
-Once the command prompt returns in the first terminal window, I execute <i>gpg --export -a > instructor.pub</i> to save the GnuPG key to a new file called instructor.pub. At the command prompt, I execute ls to list the files in the folder and verify that the instructor.pub file was saved correctly.
-<br/>
-<img src="https://i.imgur.com/ZH4CEBq.png" height="60%" width="60%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/iTQ1mex.png" height="80%" width="80%" alt="Downloading required files"/>
 <br />
-Returning to the command prompt, I type <i>exit</i> and <b>press Enter</b> to return to using the Student account.
-<h3>Share GnuPG Key</h3>
-Now I will share the public GnuPG key I just created for the Instructor account with the student account. This ensures that a file or message encrypted by a sender (student) can be decrypted by the recipient (Instructor). At the command prompt, I execute <i>cp /home/Instructor/instructor.pub /home/student/Documents/instructor.pub</i> to copy the instructor GnuPG keys (instructor.pub) to the student's Documents folder. At the command prompt, I execute <i>ls</i> to list the contents of the student folder and verify that the instructor.pub file is now included.
-<br/>
-<img src="https://i.imgur.com/Ihwuk0n.png" height="75%" width="75%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/r0Na0JN.png" height="80%" width="80%" alt="Applying changes"/>
 <br />
-At the command prompt, I execute <i>gpg --list-keys</i> to list the current public key ring for the student account. For now, the key ring will show only the student.pub key. Soon, I will import the instructor's public key.
-<br/>
-<img src="https://i.imgur.com/0pMs6K4.png" height="75%" width="75%" alt="Linux command line steps"/>
+Now, we'll retry the process to install hMailServer.
 <br />
-At the command prompt. I execute <i>gpg --import instructor.pub</i> to import the instructor's GnuPG keys to the student public key ring. Again, I execute <i>gpg --list-keys</i> to list the updated public key ring for the student account as shown below.
-<br/>
-<img src="https://i.imgur.com/VwUEr05.png" height="75%" width="75%" alt="Linux command line steps"/>
-
-<h3>Encrypt and Decrypt a ClearText Message</h3>
-Now, I will use the GnuPG (Gnu Privacy Guard) to encrypt a cleartext message that I will send between the two fictitious users (Instructor and Student) I’ve mentioned throughout this demonstration. I will first generate a GnuPG key from the Student account, then generate a GnuPG key for the Instructor account.
-At the command prompt, I execute <i>echo "this is a clear-text message from Jacob" > cleartext.txt</i> to save a clear-text message to a new file named <b>cleartext.txt</b>. Next, I exceute <i>gpg -e cleartext.txt</i> to encrypt the file. When the encryption process starts, I type the following responses, <b>pressing Enter</b> after each entry.
-
-- Enter the [recipient] user ID. End with an empty line: <b>Instructor</b>
-- Use this key anyway? (y/N): <b>y</b>
-- Enter the user ID. End with an empty line: <b>press Enter</b>
-
-Back at the command prompt, I execute <i>ls</i> to list the contents of the folder and verify that the encrypted file (cleartext.txt.gpg) has been created. At the command prompt, I execute <i>cat cleartext.txt.gpg</i> to view the contents of the encrypted file, as shown below.
-<br/>
-<img src="https://i.imgur.com/nYoq8bd.png" height="75%" width="75%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/L8yt2zb.png" height="80%" width="80%" alt="hMailServer Setup Wizard"/>
 <br />
-Next, I want to copy the cleartext.gpg message to the Instructor account and use the GnuPG keys I've already exchanged to decrypt the cleartext.txt message. To do that, at the command prompt I execute <i>sudo cp cleartext.txt.gpg /home/Instructor</i> to copy the cleartext.txt.gpg file to the instructor home directory. When I'm prompted for the password, I enter <i>student</i> to continue.
-At the command prompt, I execute <i>sudo chown Instructor: Instructor cleartext.txt.gpg</i> to modify the permissions of the file so the Instructor user can open the file. I enter <i>instructor</i> if I'm prompted for the password.
-Returning to the command prompt, I execute <i>ls -la</i> to list the contents of the Instructor folder and the file permissions associated with each file. I verify that the Instructor has read privileges to the cleartext.txt.gpg file.
-<br/>
-<img src="https://i.imgur.com/TyPBq8V.png" height="75%" width="75%" alt="Linux command line steps"/>
+Now, when we start up hMailServer, a Connect window will show up to enable us to configure our email server. Click the <b>Administrator</b> option and sign in with the password we created earlier.
 <br />
-At the command prompt, I execute <i>su Instructor</i> to switch to the Instructor account. When I am prompted for the password, I enter <i>instructor</i>. At the command prompt, I execute <i>gpg -d cleartext.txt.gpg</i> to decrypt the message.
-When prompted for the passphrase, I type "today is a nice day" and <b>press Enter</b>, leading the system to display the contents of the decrypted message. I have successfully decrypted a message from another fictional user.
-<br/>
-<img src="https://i.imgur.com/AUHS2G0.png" height="75%" width="75%" alt="Linux command line steps"/>
+<img src="https://i.imgur.com/2h9YIEo.png" height="80%" width="80%" alt="please enter hMailServer passwd"/>
 <br />
+<h3>Configure Your hMailServer</h3>
+Now, we'll start configuring our hMailServer. Click on the <b>Domains</b> section and select the <b>Add</b> button, then type your domain name. Keep it enabled and save the configuration.
+<br/>
+<img src="https://i.imgur.com/JnfiYlO.png" height="80%" width="80%" alt="Select Domains"/>
+<br />
+<img src="https://i.imgur.com/C9ZwOXk.png" height="80%" width="80%" alt="Click Save"/>
+<br />
+Next, we'll create user accounts. Expand <b>Domains</b> (by clicking the + icons) and on the <b>Accounts</b> page, click the <b>Add</b> button, and add addresses with their respective passwords. Save the settings.
+<br/>
+<img src="https://i.imgur.com/w78SbdQ.png" height="80%" width="80%" alt="Add Accounts"/>
+<br />
+<img src="https://i.imgur.com/JkGgeLw.png" height="80%" width="80%" alt="Save Accounts"/>
+<br />
+<img src="https://i.imgur.com/dfcrYFt.png" height="80%" width="80%" alt="Created Accounts"/>
+<br />
+Next, we'll proceed to disable SMTP authentication when sending emails. This option is best suited for this demonstration. You wouldn't want to provide a password every time you're sending an email, or you have an email fail to send because no authentication is provided. Expand <b>Settings</b> >> <b>Advanced</b> >> <b>IP Ranges</b> >> <b>Internet</b>. On the <b>Internet</b> section, uncheck all the check boxes under <b>Require SMTP authentication</b> and save these settings.
+<br />
+<img src="https://i.imgur.com/FlRsoJv.png" height="80%" width="80%" alt="Disable SMTP authentication"/>
+<br />
+<h3>Install and Configure Thunderbird Application</h3>
+The email server should be ready to go and it is time to test it right now. Here, we'll be installing [link download page to 'installing'] and using the open-source email client, Thunderbird.
+<br/>
+<img src="https://i.imgur.com/ODKzhwk.png" height="80%" width="80%" alt="Download Thunderbird Setup.exe"/>
+<br />
+Once it is installed, we'll configure the user accounts we created earlier during our hMailServer configurations. On the Local folders, create a new account and select <b>Email</b>. Let's make sure we choose the option to use an existing email. If a pop-up named <b>Mail Account Setup</b> appears, provide the usernames, Email addresses, and passwords we created earlier.
+<br/>
+<img src="https://i.imgur.com/nL24ToQ.png" height="60%" width="60%" alt="Mail Account Setup"/>
+<br />
+In case your configuration of Thunderbird is failing, use a manaul configuration to define the server names in the <b>IMAP</b> and <b>SMTP</b> sections. Set the server name as "localhost" for outgoing configurations. I did this for both users accounts <b>jacob@utsarr.com</b> and <b>user1@utsarr.com</b>.
+<br/>
+<img src="https://i.imgur.com/mUwUxSF.png" height="60%" width="60%" alt="Manual Configuration"/>
+<img src="https://i.imgur.com/iR5zHwK.png" height="60%" width="60%" alt="Manual Configuration for user1"/>
+<br />
+Then, we should receive a warning message. Let's check the box that says, "I understand the risks", and click <b>Confirm</b> to continue.
+<br/>
+<img src="https://i.imgur.com/alm6uXG.png" height="60%" width="60%" alt="Warning!"/>
+<br />
+Then, we'll log in to user accounts we finished configuring.
+<br/>
+<h3>Send Yourself an E-mail</h3>
+Once we have create Thunderbird profiles based from the hMailServer accounts, we'll try sending a couple of test emails to ensure communication between these accounts.
+<br/>
+<img src="https://i.imgur.com/Zfee9lp.png" height="75%" width="75%" alt="Tunderbird incoming email"/>
+<br />
+<img src="https://i.imgur.com/nfjFkSw.png" height="75%" width="75%" alt="Greetings message received"/>
+<br />
+Success!
