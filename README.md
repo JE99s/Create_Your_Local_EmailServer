@@ -14,7 +14,7 @@
 <p>This demonstration will go through the installation and configurations of a lightweight email server. Once the hMail Email Server is initialized, we'll utilize the Thunderbird email application to test the newly created email server.</p>
 <br />
 <h3>Install hMailServer on Windwos 10 VM</h3>
-On my Google Chrome browser, I'll navigate to the hMailServer Download [embed link to 'Download'] page. It is a 4MB setup file easy to configure. Fortnunately, there are not many prerequisites required to install this setup.
+On my Google Chrome browser, I'll navigate to the hMailServer <a href="https://www.hmailserver.com/" target="_blank">Download</a> page. It is a 4MB setup file easy to configure. Fortnunately, there are not many prerequisites required to install this setup.
 <br/>
 <img src="https://i.imgur.com/ZlNDSuG.png" height="80%" width="80%" alt="hMail Server Download page"/>
 <br />
@@ -81,7 +81,7 @@ Next, we'll proceed to disable SMTP authentication when sending emails. This opt
 <img src="https://i.imgur.com/FlRsoJv.png" height="80%" width="80%" alt="Disable SMTP authentication"/>
 <br />
 <h3>Install and Configure Thunderbird Application</h3>
-The email server should be ready to go and it is time to test it right now. Here, we'll be installing [link download page to 'installing'] and using the open-source email client, Thunderbird.
+The email server should be ready to go and it is time to test it right now. Here, we'll be <a href="https://www.thunderbird.net/en-US/" target="_blank">installing</a> and using the open-source email client, Thunderbird.
 <br/>
 <img src="https://i.imgur.com/ODKzhwk.png" height="80%" width="80%" alt="Download Thunderbird Setup.exe"/>
 <br />
